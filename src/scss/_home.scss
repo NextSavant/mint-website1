@@ -1,0 +1,92 @@
+%absolute-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) ;
+}
+
+#intro {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#loading {
+    @extend %absolute-center;
+}
+
+#words {
+    opacity: 0;
+    @extend %absolute-center;
+
+    color: $primary;
+    font-size: 52px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    white-space: nowrap;
+
+    .word {
+        display: inline-block;
+        position: relative;
+        top: 0;
+        left: 0;
+    }
+    
+    .word-block {
+        display: inline-block;
+        position: relative;
+        top: -10px;
+        text-align: center;
+        font-weight: normal;
+        font-size: 23px;
+        padding: 8px 0;
+        background-color: $primary;
+        color: $primary;
+    }
+
+    .quote {
+        width: 57px;
+        height: 50px;
+
+        &:first-child {
+            background-image: url("/assets/images/double-quote.png");
+            position: absolute;
+            left: -0px;
+            top: -50px;
+        }
+
+        &:last-child {
+            background-image: url("/assets/images/double-quote.png");
+            transform: rotate(180deg);
+            position: absolute;
+            right: -57px;
+            bottom: -50px;
+        }
+
+        @include media-breakpoint-down(sm) {
+            visibility: none;
+            display: none;
+        }
+    }
+
+
+}
+
+#mintLogo {
+    opacity: 0;
+}
+
+body {
+    position: relative;
+    overflow-y: auto;
+}
+
+section {
+    min-height: 100vh;
+}
+
+@import 'animations/home';

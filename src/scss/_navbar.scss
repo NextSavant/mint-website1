@@ -1,0 +1,41 @@
+.site {
+
+    .navbar {
+        z-index: 1;
+        background-color: $navbar-bg-color;
+        // transition: background-color 0.5s;
+        
+        .nav {
+            font-size: $navbar-nav-font-size;
+            font-weight: $navbar-nav-font-weight;
+            letter-spacing: 1px;
+            width: 100%;
+
+            .nav-item {
+                a {
+                    color: $navbar-nav-color;
+                    border-top: $navbar-link-border-width solid transparent;
+                    text-shadow: 0 0 10px white;
+
+                    &.active {
+                        border-top-color: $navbar-nav-color;
+                    }
+
+                    transition: color 0.5s, border-top-color .5s, letter-spacing 0.3s;
+                }
+            }
+        }
+
+        &.on-intro {
+            background-color: transparent;
+            .nav-item {
+                a {
+                    color: darken($primary, 15);
+                    letter-spacing: 2px;
+                }
+            }
+        }
+    }
+}
+
+    

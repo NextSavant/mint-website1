@@ -1,0 +1,83 @@
+.site {
+    
+    
+    .heading {
+        color: $primary;
+        vertical-align: top;
+        position: relative;
+        font-weight: 900;
+
+        .heading-line {
+            display: block;
+            height: 4px;
+            border-radius: 10%;
+            background-color: $primary;
+        }
+    }
+
+    .division-line {
+        width: 1px;
+        height: 100px;
+        background-color: $border-color;
+    }
+    
+    .seal {
+        background-image: url('/assets/images/bg-seal.png');
+        background-size: cover;
+        width: 200px;
+        height: 200px;
+    }
+
+    #map {
+        width: 100%;
+        height: 250px;
+        box-shadow: 0 0 7px lightgray;
+        overflow: hidden;
+        @include media-breakpoint-up(lg) {
+            width: 450px;
+            height: 450px;
+            border-radius: 50%;
+            float: right;
+        }
+    }
+    
+    
+    .arrow {
+        width: 100px;
+        height: 30px;;
+        position: fixed;
+        
+        &:before {
+            content: '';
+            height: 1px;
+            width: 100%;
+            background-color: $secondary;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        &:after {
+            content: '';
+            border: solid black;
+            border-width: 0 1px 1px 0;
+            padding: 10px;
+            position: absolute;
+            right:0;
+            bottom: 50%;
+            transform-origin: right bottom;
+            transform: rotate(-45deg) ;
+        }
+
+        &.up {
+            transform: rotate(-90deg);
+        }
+        &.down {
+            transform: rotate(90deg);
+        }
+    }
+    
+    
+   
+
+}

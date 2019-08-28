@@ -1,0 +1,43 @@
+{
+  "name": "mint-website",
+  "version": "1.0.0",
+  "description": "",
+  "dependencies": {
+    "animate.css": "^3.6.1",
+    "bootstrap": "^4.0.0",
+    "fullpage.js": "^2.9.6",
+    "hamburgers": "^0.9.3",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.12.9"
+  },
+  "devDependencies": {
+    "autoprefixer": "^8.0.0",
+    "css-loader": "^0.28.10",
+    "cssnano": "^3.10.0",
+    "expose-loader": "^0.7.4",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "file-loader": "^1.1.10",
+    "node-notifier": "^5.2.1",
+    "node-sass": "^4.7.2",
+    "postcss-loader": "^2.1.1",
+    "precss": "^3.1.2",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.20.2",
+    "sugarss": "^1.0.1",
+    "suppress-chunks-webpack-plugin": "0.0.4",
+    "uglifyjs-webpack-plugin": "^1.2.5",
+    "webpack": "^3.10.0",
+    "webpack-build-notifier": "^0.1.23",
+    "webpack-cli": "^2.0.9",
+    "webpack-dev-server": "^2.11.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "watch": "webpack --watch",
+    "dev": "webpack-dev-server --open --config webpack.dev.js",
+    "dev:build": "webpack --config webpack.dev.js"
+  },
+  "author": "BrainBang",
+  "license": "ISC"
+}

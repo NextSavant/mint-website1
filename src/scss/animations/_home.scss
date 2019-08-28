@@ -1,0 +1,162 @@
+.animate {
+    
+    #loading {
+        opacity: 0;
+    }
+
+    #words  {
+        opacity: 1;
+
+        .word-block {
+            animation: 
+                blocks-enter .5s normal backwards,
+                blocks-morph .3s normal forwards,
+                blocks-leave .5s normal forwards;
+    
+            &:nth-child(2) { animation-delay: 0.4s, 5.3s, 6.9s; }
+            &:nth-child(5) { animation-delay: 0.6s, 5.5s, 7.1s; }
+            &:nth-child(8) { animation-delay: 0.8s, 5.7s, 7.3s; }
+            &:nth-child(12){ animation-delay: 1.0s, 5.9s, 7.5s; }
+        }
+    
+        .word {
+            animation: 
+                .5s normal backwards,
+                .5s normal forwards
+                ;
+    
+            &.left { animation-name: word-enter-left, word-leave; }
+            &.right { animation-name: word-enter-right, word-leave; }
+    
+            &:nth-child(4) { animation-delay: 1.9s, 4.1s; }
+            &:nth-child(6) { animation-delay: 2.7s, 4.3s; }
+            &:nth-child(9) { animation-delay: 2.3s, 4.5s; }
+            &:nth-child(11){ animation-delay: 3.1s, 4.7s; }
+        }
+    
+
+        .quote {
+            animation: 
+                // appear
+                appear-vanish 0.5s 1.4s normal backwards, 
+                // vanish
+                appear-vanish 0.5s 4.7s reverse forwards;
+        }
+    }
+    
+    #intro {
+        animation: bg-blue 1s 8s normal both;
+    }
+    
+    #mintLogo {
+        opacity: 1;
+        animation: appear-vanish 1.5s 8.4s normal both;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+
+@keyframes blocks-enter {
+    0% {
+        color: $primary;
+        top: 999px;
+    }
+
+    50% {
+        top: -30px;
+    }
+
+    100% {
+        top: -10px;
+    }
+}
+
+@keyframes blocks-leave {
+    0% {
+        top: -10px;
+    }
+
+    50% {
+        top: 30px;
+    }
+
+    100% {
+        top: -999px;
+        visibility: hidden;
+    }
+}
+
+@keyframes blocks-morph {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.25);
+    }
+
+    100% {
+        color: white;
+        transform: scale(1);
+        border-radius: 40px;
+        background-color: $secondary;
+    }
+}
+
+@keyframes word-enter-left {
+    0% {
+        left: -500px;
+        opacity: 0 ;
+    }
+
+    100% {
+        left: 0;
+        opacity: 1;
+    }
+}
+@keyframes word-enter-right {
+    0% {
+        left: 500px;
+        opacity: 0 ;
+    }
+
+    100% {
+        left: 0;
+        opacity: 1;
+    }
+}
+
+@keyframes word-leave {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.5);
+    }
+    100% {
+        transform: scale(0);
+    }
+}
+
+@keyframes appear-vanish  {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+
+}
+
+@keyframes bg-blue {
+    0% {
+        background-color: white;
+    }
+    100% {
+        background-color: $primary;
+    }
+}
